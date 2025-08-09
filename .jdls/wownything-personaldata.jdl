@@ -1,0 +1,761 @@
+enum GenderEnum {
+  MALE,
+  FEMALE
+}
+
+enum BloodTypeEnum {
+  A_POSITIVE("A+"),
+  A_NEGATIVE("A-"),
+  B_POSITIVE("B+"),
+  B_NEGATIVE("B-"),
+  O_POSITIVE("O+"),
+  O_NEGATIVE("O-"),
+  AB_POSITIVE("AB+"),
+  AB_NEGATIVE("AB-")
+}
+
+enum DayEnum {
+  SUNDAY,
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY
+}
+
+enum MonthEnum {
+  JANUARY,
+  FEBRUARY,
+  MARCH,
+  APRIL,
+  MAY,
+  JUNE,
+  JULY,
+  AUGUST,
+  SEPTEMBER,
+  OCTOBER,
+  NOVEMBER,
+  DECEMBER
+}
+
+enum AuthorizationModeEnum {
+  CREATE,
+  READ,
+  UPDATE,
+  MODIFY,
+  DELETE,
+  SHARED,
+  DOWNLOAD,
+  FULL_CONTROL
+}
+
+enum AuthorizationObjectEnum {
+  APPLICATION,
+  MODULE,
+  PAGE,
+  SECTION,
+  FORM,
+  DATA,
+  DOCUMENT
+}
+
+enum AuthorizedSubjectEnum {
+  USER,
+  GROUP,
+  ROLE,
+  ORGANIZATION,
+  PUBLIC,
+  ENTITLEMENT
+}
+
+enum PriceTypeEnum {
+  CONTRACT_PRICE,
+  PACKAGE_BASE_PRICE,
+  PACKAGE_SERVICE_PRICE
+}
+
+enum ScreeningSubjectEnum {
+  PERSON,
+  ORGANIZATION,
+  COMMODITY,
+  TRADEMARK,
+  ORGANIZATION_AND_PRINCIPAL,
+  OTHERS
+}
+
+enum DocumentOwnershipEntityTypeEnum {
+  PERSON,
+  ORGANIZATION,
+  GROUP,
+  PUBLIC
+}
+
+enum WorkflowPointEnum {
+  START,
+  PROCESS,
+  FINISH,
+  EXCEPTION,
+  TERMINATED
+}
+
+enum DurationEnum {
+  SECONDS,
+  MINUTES,
+  HOURS,
+  DAYS,
+  WEEKS,
+  MONTHS,
+  YEARS
+}
+
+enum CommunicationChannelEnum {
+  PHONE_CALL,
+  TEXT_MESSAGING,
+  EMAIL,
+  CHAT,
+  VIDEO_CALL,
+  DIRECT_VISIT,
+  FORM_SURVEY,
+  OTHERS
+}
+
+enum ContactChannelEnum {
+  LINE_PHONE,
+  MOBILE_PHONE,
+  EMAIL,
+  FAX,
+  SOCIALS,
+  ADDRESS,
+  WEBLINK,
+  OTHERS
+}
+
+enum ContactTypeEnum {
+  DEFAULT,
+  PERSONAL,
+  WORK,
+  ALTERNATIVE,
+  EMERGENCY,
+  HOME,
+  OFFICE,
+  SURROGATE,
+  OTHERS
+}
+
+enum MaritalStatusEnum {
+  SINGLE,
+  MARRIED,
+  SEPARATED,
+  DIVORCED,
+  WIDOWED
+}
+
+enum AtomicCheckFinalFlagEnum {
+  OK,
+  NOT_OK,
+  DISCREPANCY,
+  NOT_IDENTIFIED
+}
+
+enum FileAssetType {
+  ATTACHMENT,
+  CV,
+  PHOTO_AVATAR,
+  DOCUMENT,
+  REPORT,
+  SCREENSHOT,
+  VOICE_NOTES,
+  VOICE_CALL_RECORDING,
+  VIDEO,
+  VIDEO_CALL_RECORDING,
+  MEDIA_POST,
+  CHAT_TRANSCRIPT,
+  OTHERS
+}
+
+/**
+ * International School Education Type (ISCED)
+ * based on definition by Unicef
+*/
+enum IntlSchoolEducationTypeEnum {
+  /* playgroup and kindergarden equivalent */
+  EARLY_CHILDHOOD,
+  /* primary school or equivalent */
+  PRIMARY_SCHOOL,
+  /* junior high school or equivalent */
+  LOWER_SECONDARY,
+  /* senior high school or equivalent */
+  UPPER_SECONDARY,
+  /* diploma school or equivalent */
+  POST_SECONDARY_NON_TERTIARY,
+  /* professional certification or equivalent (doctor, engineer, lawyer) */
+  SHORT_CYCLE_TERTIARY,
+  /* bachelor or equivalent */
+  BACHELOR_OR_EQUIVALENT,
+  /* magister school or equivalent */
+  MASTER_OR_EQUIVALENT,
+  /* doctoral or PHD school or equivalent */
+  DOCTORAL_OR_EQUIVALENT
+}
+
+
+/**
+ * common authentication methods,
+ * this information to aknowledge authentication type that used by user to application,
+ * or by application to external service integration
+*/
+enum AuthenticationTypeEnum {
+  /* multifactor authentication */
+  MFA,
+  /* generated token, apikey, api token or similar */
+  TOKEN_AUTH,
+  /* sso authentication */
+  SSO,
+  /* http authorization header */
+  HTTP_AUTH,
+  /* device IMEI recognition */
+  DEVICE_RECOGNITION,
+  /* multiple questions, based on common question */
+  KNOWLEDGE_FACTOR,
+  /* fingerprint */
+  BIOMETRIC,
+  /* SSL certificate validation */
+  CERTIFICATE,
+  /* authenticated by authentication provider */
+  OAUTH,
+  /* general user-password methodology */
+  BASIC_AUTH,
+  /* ldap user directory */
+  LDAP,
+  /* kerberos */
+  KERBEROS,
+  /*
+  * The main difference between OAuth2 and OpenID Connect is:
+  * OAuth2 is only concerned with authorization,
+  * while OpenID Connect is also concerned with authentication.
+  */
+  OPEN_ID,
+  /* face recognition by camera */
+  FACE_RECOGNITION,
+  /* captcha */
+  CAPTCHA,
+  /* saml */
+  SAML,
+  /* temporal token send to email, sms, or any communcation channel */
+  TEMPORARY_TOKEN
+}
+
+/**
+ * family relationship type
+*/
+enum FamilyRelationshipType {
+  FATHER,
+  MOTHER,
+  HUSBAND,
+  WIFE,
+  SPOUSE,
+  CHILD,
+  SIBLING,
+  MOTHER_IN_LAW,
+  FATHER_IN_LAW,
+  STEP_MOTHER,
+  STEP_FATHER,
+  GRANDMOTHER,
+  GRANDFATHER,
+  COUSIN,
+  NEPHEW,
+  AUNT,
+  UNCLE,
+  RELATIVE,
+  FOSTER_CHILD,
+  ADOPTIVE_PARENT
+}
+
+/**
+ * professional relationship type
+*/
+enum ProfessionalRelationshipType {
+  /* used to describe relationship between manager/supervisor to subordinate */
+  STAFF_SUBORDINATE,
+  /* used to describe relationship between company owner/HR to employee */
+  STAFF_EMPLOYEE,
+  /* used to describe relationship between two collegue */
+  COWORKER,
+  /* used to describe relationship between staff to manager/supervisor */
+  MANAGER_SUPERVISOR,
+  /* used to describe relationship between an employee to mentor */
+  MENTOR,
+  /* used to describe relationship employee to HRD */
+  HR
+}
+
+/**
+ * miscellaneous relationship type
+ * used to describe relationship between someone to the other
+*/
+enum MiscellenousRelationshipType {
+  /* school's student, course student, etc */
+  STUDENT,
+  /* school's teacher, course teacher, etc */
+  TEACHER,
+  /* the person with the highest authority or most important position in an organization, institution, or group. */
+  PRINCIPAL,
+  /* one who gives full loyalty and support to another */
+  FOLLOWER,
+  /* a person that influences another. */
+  INFLUENCER,
+  /* someone inspiring, who give new ideas and a strong feeling of enthusiasm */
+  INSPIRED_PERSON,
+  GIRLFRIEND,
+  BOYFRIEND,
+  FRIEND,
+  /* participants and allies from the local community */
+  COMMUNITY_CIRCLE,
+  /* participants and allies from the local community */
+  NEIGHBOR,
+  /* an inhabitant or occupant of a particular place */
+  DENIZEN
+}
+
+
+enum PersonRelationshipCategoryEnum {
+  FAMILY_RELATION,
+  PROFESSIONAL_RELATION,
+  MISCELLANEOUS_RELATION
+}
+
+/**
+ * used to split role level of users
+*/
+enum RoleLevelEnum {
+  ADMINISTRATOR,
+  INTERNAL_EMPLOYEE,
+  INTERNAL_AGENT,
+  EXTERNAL_AGENT,
+  SERVICE_PROVIDER,
+  CLIENT,
+  AUDITOR,
+  GUEST,
+  DEVELOPER
+}
+
+/**
+ * communication transcript type enum used to classify communication recording type
+*/
+enum CommunicationTranscriptTypeEnum {
+  VOICE_CALL,
+  VIDEO_CALL,
+  CHAT,
+  MESSAGING,
+  VIDEO_RECORDING,
+  VOICE_RECORDING,
+  IMAGE_SURVEILLANCE,
+  OTHERS
+}
+
+/**
+ * enum representing different device types
+*/
+enum DeviceTypeEnum {
+  PHONE,
+  TABLET,
+  LAPTOP,
+  DESKTOP,
+  SMARTWATCH,
+  SMARTTV,
+  GAME_CONSOLE,
+  IoT_DEVICE,
+  OTHER
+}
+
+/**
+ * enum representing different device platform types
+*/
+enum DevicePlatformType {
+  ANDROID,
+  IOS,
+  WINDOWS,
+  MAC_OS,
+  LINUX,
+  WEB,
+  OTHER
+}
+
+
+/**
+ * to categorize area type of jurisdiction
+*/
+enum JurisdictionAreaTypeEnum {
+  DISTRICT,
+  SUB_DISTRICT,
+  REGION,
+  CITY,
+  STATE_PROVINCE,
+  COUNTRY,
+  POSTCODE,
+  LAND_ISLAND,
+  CUSTOM
+}
+
+/**
+ *  Enum representing education completion status
+*/
+enum EducationCompletionEnum {
+  ONGOING,
+  COMPLETED,
+  DROPPED_OUT
+}
+
+
+/**
+ * enum representing affiliation status
+*/
+enum AffiliationStatusEnum {
+  ACTIVE,
+  INACTIVE,
+  PENDING
+}
+
+/**
+ * enum representing Employee Contract Status
+*/
+enum EmployeeContractStatus {
+  PERMANENT,
+  TEMPORARY,
+  CONTRACTOR,
+  INTERN,
+  CONSULTANT
+}
+
+/**
+ * enum representing Sales Contract Payment Type
+*/
+enum ContractPaymentTypeEnum {
+  PRE_PAID,
+  POST_PAID
+}
+
+
+enum RuleMethodEnum {
+  FREE_TEXT,
+  SINGLE_SELECT,
+  MULTI_SELECT,
+  TRUE_FALSE,
+  NUMBER,
+  UPLOAD
+}
+
+enum HttpRequestMethodEnum {
+  GET,
+  POST,
+  PUT,
+  DELETE,
+  PATCH,
+  HEAD,
+  OPTIONS,
+  TRACE
+}
+
+/**
+ * Enumeration representing the confirmation status of a cost.
+ * - CONFIRMED: The cost is confirmed.
+ * - PENDING: The cost confirmation is pending.
+ * - REJECTED: The cost confirmation has been rejected.
+ */
+enum CostConfirmationEnum {
+  CONFIRMED,
+  PENDING,
+  REJECTED
+}
+
+/**
+ * ClientIntroductionStatusEnum whether accepted, under_review, rejected
+ */
+enum ClientIntroductionStatusEnum {
+  UNDER_REVIEW,
+  ACCEPTED,
+  REJECTED
+}
+
+
+/**
+ * Enumeration representing the state of document
+*/
+enum DocumentState {
+  PUBLISHED,
+  DRAFT,
+  ARCHIVED,
+  DELETED,
+  REVISED,
+  PUBLISH_INTERIM
+}
+
+/**
+ * Enumeration representing the state of Screening Report
+*/
+enum ScreeningReportState {
+  INTERIM,
+  FINAL
+}
+
+enum MembershipStatusEnum {
+  /* Indicates a healthy or normal status. Memberships flagged as green are typically in good standing with no outstanding issues or concerns. This status signifies that the member is active and up to date with their payments or obligations. */
+  GREEN,
+  /* Suggests a warning or caution. Memberships flagged as orange may have minor issues or pending actions that need to be addressed soon. This status serves as an early indicator of potential problems or upcoming deadlines that require attention. */
+  ORANGE,
+  /* Indicates a critical issue or alert. Memberships flagged as red may have overdue payments, pending cancellations, or other urgent matters requiring immediate attention from the management or customer service team. */
+  RED,
+  /* Indicates a suspended or inactive status. Memberships flagged as black may have been suspended due to non-payment, violation of terms, or other reasons. This status signifies that the membership is temporarily on hold or has been terminated until further notice. */
+  BLACK
+
+}
+
+enum InvoiceStatusEnum {
+  DRAFT, //The invoice has been created but not yet finalized or sent to the customer.
+  PENDING, //The invoice has been sent to the customer and is awaiting payment.
+  PAID, //The invoice has been paid by the customer.
+  OVERDUE, //The invoice is past its due date and payment has not been received.
+  CANCELED //The invoice has been canceled, typically by the issuer or the customer.
+}
+
+enum PaymentStatusEnum {
+  PENDING, //The payment is awaiting processing or verification.
+  COMPLETED, //The payment has been successfully processed and completed.
+  FAILED, //The payment attempt has failed or encountered an error.
+  CANCELED, //The payment has been canceled by the payer or the system.
+  BILLED //The payment has been billed to the customer but not yet processed or completed.
+}
+
+/**
+ *  the types of discounts can vary greatly depending on the business model and industry
+*/
+enum DiscountMeasurementEnum {
+  PERCENTAGE, //Discounts expressed as a percentage of the total amount.
+  FIXED_AMOUNT, //Discounts expressed as a fixed amount subtracted from the total
+  MULTI_BUY, //Discount where purchasing multiple items triggers a discount on the total
+  TIERED, //Discount that varies based on purchase thresholds (e.g., $10 off for $100 spent, $20 off for $200 spent)
+  BUNDLE, //Discount applied when purchasing a group of items together
+  VOLUME, //Discount based on the quantity purchased
+  SEASONAL, //Discount applied during specific seasons or events (e.g: END YEAR sales)
+  COUPON //Discount applied when a specific code is entered during checkout
+}
+
+
+/**
+ * enums to categorize and manage different levels of severity in notification.
+*/
+enum SeverityLevelEnum {
+  LOW,
+  MEDIUM,
+  HIGH,
+  CRITICAL
+}
+
+/**
+ * enumeration of sources that are dynamically associated with a form.
+ * This enum is used to identify and categorize the different origins or contexts from which form data can be sourced
+*/
+enum DynamicFormAssociatedSourceEnum {
+  TASK_WORKITEM,
+  ATOMIC_CHECK,
+  SCREENING,
+  PUBLIC_LINK,
+  NO_ASSOCIATION
+}
+
+/**
+ * SurveyFormStatusEnum to identify status of published generic dynamic form
+*/
+enum SurveyFormStatusEnum {
+  DRAFT,
+  FINAL,
+  REVISED
+}
+
+/**
+ * used to map associated entity on task work item
+*/
+enum TaskAssociatedEntityEnum {
+  CASE_DETAILS,
+  SCREENING,
+  ATOMIC_CHECK,
+  INVOICING,
+  CONTRACT,
+  PAYMENT,
+  PARTNER_BILLING
+}
+
+/**
+ * used to split level of task priority
+*/
+enum TaskPriorityEnum {
+  IMPORTANT,
+  NORMAL
+}
+
+/**
+ * used to split assignment direction enum
+*/
+enum AssignmentDirectionEnum {
+  FOR_CLIENT
+  TO_EXTERNAL
+  TO_BACKOFFICE
+  TO_PROVIDER
+  TO_FIELDAGENT
+  FROM_VENDOR
+  FROM_CLIENT
+  FROM_PROVIDER
+}
+
+/**
+ * used to split role on behalf enum
+*/
+enum RoleOnBehalfEnum {
+  OWNER
+  VIEWER
+  REVIEWER
+  CONTRIBUTOR
+}
+
+/**
+ * another name is InformationValidationStatusEnum, the status that labelled to subject information after screening atomic check done
+*/
+enum QualifiedInformationStatusEnum {
+  NOT_APPLICABLE,
+  VALID,
+  INVALID,
+  DISCREPANCY,
+  CANNOT_BE_VERIFIED
+}
+
+
+/**
+ * AgentClassificationTypeEnum is initial identification of AgentClassificationType to included in Dispatching formula
+*/
+enum AgentClassificationTypeEnum {
+  BACKOFFICE_AGENT,
+  FIELD_AGENT,
+  FREELANCER_AGENT,
+  VENDOR_AGENT,
+  SERVICE_PROVIDER_AGENT,
+  UNCATEGORIZED_AGENT
+}
+
+/**
+ * ClientYearlyEstRequestQtyEnum is initial identification of client estimation yearly request
+*/
+enum ClientYearlyEstRequestQtyEnum {
+  LOW ("1 - 50"),
+  STANDARD ("51 - 200"),
+  LARGE ("200 - 1000"),
+  EXCLUSIVE ("more than 1000")
+}
+
+
+/**
+ * Integrity - Business operation area
+*/
+enum IntegrityBusinessAreaEnum {
+  PREVENTION,
+  DETECTION,
+  MITIGATION
+}
+
+/**
+ * Integrity - Integrity product service classification
+*/
+enum IntegrityServiceClassificationEnum {
+  BACKGROUND_SCREENING,
+  DUE_DILIGENCE,
+  TRAINING_AND_CONSULTING,
+  WHISTLEBLOWING_SYSTEM,
+  MISTERY_SHOPPING,
+  MARKET_SURVEY_AND_INSPECTION,
+  FRAUD_INVESTIGATION,
+  CLAIM_INVESTIGATION,
+  ASSET_AND_SKIP_TRACING,
+  BRAND_PROTECTION,
+  GENERAL_INVESTIGATION
+}
+
+/**
+ * Integrity partnership type classification: vendor agency, freelancer, service provider
+*/
+enum PartnershipTypeEnum {
+  VENDOR_AGENCY,
+  FREELANCER,
+  SERVICE_PROVIDER_SYSTEM,
+  MISCELLANEOUS
+}
+
+
+/**
+ * Integrity define verification methodology in 3 type of components, search, visit and surveillance, interaction or interview
+*/
+enum VerificationComponentEnum {
+  /** search is most common methodology that used in screening to verify the information, search mean searching related information of subject in any media type offline or online */
+  SEARCH,
+  /** field visit or surveillance is second component of verification, to clarify information same that unable to complete by back office */
+  VISIT_SURVEILLANCE,
+  /** interact or interview is another component for verifying information. interaction or interview is done to clarify information direct or indirect to associated entity of  screening subject */
+  INTERACTION_INTERVIEW,
+  /** miscellaneous is any others verification component or methodology to verify the information */
+  MISCELLANEOUS
+}
+
+/**
+ * Screening email invitation status
+*/
+enum ScreeningInvitationStatusEnum {
+  NOT_STARTED,
+  SENT,
+  REMINDED,
+  CONFIRMED,
+  REJECTED,
+  CANCELLED,
+  EXPIRED
+}
+
+/**
+ * Screening request methods
+*/
+enum ScreeningRequestMethodEnum {
+  DIRECT_REQUEST,
+  BY_INVITATION
+}
+
+enum PersonalSectionEnum {
+  PersonBase,
+  ContactAddress,
+  ContactEmail,
+  ContactPhone,
+  ContactSocial,
+  ContactWeb,
+  PersonAffiliation,
+  PersonalDocument,
+  PersonAlias,
+  PersonCertificationLicense,
+  PersonEducation,
+  PersonEmployment,
+  PersonLegalIdentity,
+  PersonNationality,
+  PersonRelation,
+  PersonSkills,
+  PersonStatus
+}
+
+enum PersonalDocumentTypeEnum {
+  PhotoAvatar,
+  PersonAffiliation,
+  PersonAlias,
+  PersonCertificationLicense,
+  PersonEducation,
+  PersonEmployment,
+  PersonLegalIdentity,
+  PersonNationality,
+  PersonRelation,
+  PersonSkills,
+  PersonStatus,
+  Miscellaneous
+}
